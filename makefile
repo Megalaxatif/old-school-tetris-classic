@@ -1,5 +1,5 @@
 CXX = g++
-EXEC = tetris
+EXEC = tetrisclassic
 SRC = tetris.cpp main.cpp
 
 all : $(EXEC)
