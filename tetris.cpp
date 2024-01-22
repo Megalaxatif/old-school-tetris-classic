@@ -441,7 +441,7 @@ void Tetris::rotate_tetramino() {
     int new_tetramino[4][4] = { 0 };
     for (int y = 0; y < 4; y++) {
         for (int x = 0; x < 4; x++) {
-            new_tetramino[x][y] = current_tetramino[y][3 - x];
+            new_tetramino[x][y] = current_tetramino[3 - y][x];
         }
     }
     if (!check_collision(new_tetramino, 0, 0, posx, posy)) { // if there is no collisions we merge current_tetramino and new_tetramino
@@ -580,7 +580,7 @@ void Tetris::display_counter(int n, int *var, int counter_posx, int counter_posy
 }
 void Tetris::display_broken_line_counter() {
     goto_(broken_lines_counter_posx, broken_lines_counter_posy);
-    std::cout << "\033[31mBROKEN LINE: \033[0m" << broken_lines;
+    std::cout << "\033[31mBROKEN LINES: \033[0m" << broken_lines;
 }
 void Tetris::draw_tetris_logo() {
     for (int i = 0; i < tetris_logo_heigth; i++) {
