@@ -1,16 +1,11 @@
 #include "tetris.hpp"
-/*
-***********************INFORMATIONS BEFORE USE*****************
-- This is the classic version of the old-school-tetris project. It's less beautiful than the classic version but you can modify it as you want and run it on different command prompt
-- Don't forget to respect the LICENCE.txt (the "licence") of the project before any change
 
+/*
 1 fitted piece = 10 points
 1 broken line = 100 points
 2 lines = 300
 3 lines = 500
 4 lines (tetris) = 1000
-
-***************************************************************
  ______   ______    ______   ______     __     ______
 /\__  _\ /\  ___\  /\__  _\ /\  == \   /\ \   /\  ___\
 \/_/\ \/ \ \  __\  \/_/\ \/ \ \  __<   \ \ \  \ \___  \
@@ -480,7 +475,7 @@ void Tetris::try_break_line() {
         else break;
     }
     if (at_least_one_line_broken) {
-        std::this_thread::sleep_for(std::chrono::milliseconds(50));
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
         // we flash the line 3 times
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 4; j++) {
